@@ -24,14 +24,15 @@ def runlengthencodeing(seq):
     return compressed
 
 def main():
-    seq = input('Seqüència de 0 i 1:') #Demanem a l'usuari que introdueixi una seqüència
-    #Fem un for per assegurar que en la sqüència només hi ha 0s i 1s
-    for i in range(1, len(seq)):
-        if seq[i]!=0 or seq[i]!=1:
-            print('La seqüència no contè 0s i 1s, torna a introduir-la:')
-            break
-    #Tornem a demanar a l'usuari que introdueixi la seqüència
+    # Demanem a l'usuari que introdueixi una seqüència
     seq = input('Seqüència de 0 i 1:')
+
+    #Fem un for per assegurar que en la seqüència només hi ha 0s i 1s
+    for i in range(1, len(seq)):
+        if seq[i] != 0 or seq[i] != 1:
+            print('La seqüència no contè 0s i 1s, torna a introduir-la:')
+            seq = input('Seqüència de 0 i 1:')
+            break
 
     list = runlengthencodeing(seq) #Cridem a la funció
 
